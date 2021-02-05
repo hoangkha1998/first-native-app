@@ -4,9 +4,9 @@ import { StyleSheet, View, Text} from 'react-native';
 
 export default function HeaderTitleSc1(){
     return(
-        <View style={styles.header}>            
+        <Header style={styles.header}>            
             <Text style={styles.title_header}>Title App </Text>
-        </View> 
+        </Header> 
     )
 }
 
