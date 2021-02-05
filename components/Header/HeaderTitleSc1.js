@@ -4,19 +4,20 @@ import { StyleSheet, View, Text} from 'react-native';
 
 export default function HeaderTitleSc1(){
     return(
-        <Header style={styles.header}>            
+        <Header style={styles.header} >            
             <Text style={styles.title_header}>Title App </Text>
-        </Header> 
+        </Header>       
     )
 }
 
 const styles = StyleSheet.create({
     header:{
         backgroundColor: '#091046',        
-        alignItems: 'center',        
+        alignItems: 'center',
+        margin:-20                
     },
     title_header:{
         color:'white', 
         fontSize:20
-    },
+    },    
 })
