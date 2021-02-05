@@ -1,39 +1,64 @@
-import { Content, Text } from 'native-base';
+import { Container, Content, Text, View } from 'native-base';
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { List } from 'react-native-paper';
+import Footer2 from '../Footer/FooterScreen2';
 
 export default function Screen2() {
   const dataAccordion = [
-      {
-         title: 'おばあさん', 
-         text: "自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）" 
-      },
-      { 
+    {
+        title: 'おばあさん', 
+        content: [
+            {text: "123 紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）"},
+            {text: "456 紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）"},
+            {text: "789 紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこしょうかい ）"}
+        ]
+    },
+    { 
         title: 'マイケルです。', 
-        text: "じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介" 
-      },
-      { 
+        content: [
+            {text: "123自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介"},
+            {text: "456自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介"},
+            {text: "789自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介"}
+        ]
+    },
+    { 
         title: 'のマイケ',
-        text: "じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこ" 
-      },
+        content: [
+            {text: "123じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこ"},
+            {text: "456じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこ"},
+            {text: "789じこしょうかい ）自己紹介じこしょうかい ）自己紹介じこしょうかい ）自己紹介 （ じこしょうかい ）自己紹介 （ じこ"}
+        ]
+    },
   ];
 
   return (
-    <Content>
-      <List.Section>
-        {dataAccordion.map((data) => (
-           <List.Accordion
-              style={styles.accordion}
-              title={<Text style={styles.titleText}>{data.title}</Text>}
+    <Container>
+      <Content>
+        <List.Section>
+          {dataAccordion.map((data, i) => (
+            <List.Accordion key={i}
+                style={styles.accordion}
+                title={<Text style={styles.titleText}>{data.title}</Text>}
             >
-            <Text style={styles.titleContent}>
-                {data.text}
-            </Text>
-          </List.Accordion>
-        ))}
-    </List.Section>
-    </Content>
+            {
+                data.content.map((dataContent, k) => 
+                    {
+                        return(
+                            <Text key={k} style={styles.dataContent}>
+                                {dataContent.text}
+                            </Text>
+                        )
+                    }
+                )
+            }
+            </List.Accordion>
+          ))}
+
+      </List.Section>
+      </Content>
+      <Footer2/>
+    </Container>
   );
 }
 const styles = StyleSheet.create({
@@ -49,9 +74,11 @@ const styles = StyleSheet.create({
     fontSize:17, 
     fontWeight:"bold"
   },
-  titleContent: {
+  dataContent: {
     paddingLeft:15, 
-    paddingRight:15, 
+    paddingRight:15,
+    paddingTop: 10,
+    paddingBottom: 10,
     fontWeight:"bold", 
     color:"#848484"
   }

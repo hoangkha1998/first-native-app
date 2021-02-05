@@ -42,12 +42,14 @@ const styles = StyleSheet.create({
     btn1: {
         borderColor: '#a9a9a9',
         flex:1,
-        marginRight:5
+        marginRight:5,
+        borderRadius:5,
     },
 
     btn2: {
         backgroundColor: "#091046",
         flex:1,
+        borderRadius:5,
     },
     buttonText1: {
         fontSize: 15,
