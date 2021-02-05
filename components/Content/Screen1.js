@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         borderWidth:2,
         borderColor:'#F5F5F5',
         width:170,
-        height: 35,
+        height: 45,
         textAlign:'center',
         textAlignVertical:'center'
     },
