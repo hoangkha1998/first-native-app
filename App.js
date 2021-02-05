@@ -1,16 +1,23 @@
 import React from 'react';
-import FooterScreen2 from './components/Footer/FooterScreen2';
-import HeaderScreen2 from './components/Header/HeaderScreen2';
-import Screen2 from './components/Content/Screen2';
-import { Container } from 'native-base';
+import { StyleSheet, Text, View } from 'react-native';
+import FooterScreen from './components/Footer';
+import Navigator from './components/Navigator';
+
 
 export default function App() {
   return (
-    <Container>  
-        <HeaderScreen2/>     
-        <Screen2/>
-        <FooterScreen2/>
-    </Container>
+        <View style={styles.container}>              
+          {/* <FooterScreen/> */}
+          {/* <Navigator/> */}
+        </View>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+  },
+});
