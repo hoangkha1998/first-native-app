@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Header, Content, List, ListItem ,Body, Title, Footer} from 'native-base';
-import { StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
+import Footer1 from '../Footer/FooterScreen1'
 
 
 export default function Screen1({navigation}){
@@ -18,25 +19,20 @@ export default function Screen1({navigation}){
                     <Text style={styles.content_title_text}>The first title in my phone</Text>
                 </View>
                 <View style={styles.content_boder_radius}>
-                    <Text style={styles.content_boder_radius_text}>The first title in my phone</Text>
+                    <TextInput style={styles.content_boder_radius_text} placeholder='The first title in my phone'/>
                 </View> 
 
                 <View style={styles.content_title}>
                     <Text style={styles.content_title_text}>The second title in my phone</Text>
                 </View>
                 <View style={styles.content_boder_radius}>
-                    <Text style={styles.content_boder_radius_text}>The second title in my phone</Text>
+                    <TextInput style={styles.content_boder_radius_text} placeholder='The second title in my phone'/>
                 </View>          
                 <View style={styles.content_footer}>
                     <Text style={styles.content_footer_text}>The third title in my phone</Text>
                 </View>
             </Content>
-            <Footer style={styles.footer_text}>
-                <View style={styles.footer_view}>
-                    <Text style={[styles.footer_btn, styles.footer_btn_left]} onPress={()=>navigation.navigate('Screen2')}>Buton1</Text>
-                    <Text style={[styles.footer_btn, styles.footer_btn_right]}onPress={()=>alert(1)}>Buton1</Text>
-                </View>
-            </Footer>
+            <Footer1 navigation={navigation}/>
         </Container>
     )
 }
