@@ -96,7 +96,7 @@ export default function Tabbar() {
 
                 <View style={styles.infor2}>
                 {dataTitleImage.map((data, i) => (
-                    <View style={styles.projectRow}>
+                    <View key={i} style={styles.projectRow}>
                         <View style={styles.icon}>
                             <Ionicons name={data.image} size={17} color="white" />
                         </View>

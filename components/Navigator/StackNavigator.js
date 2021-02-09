@@ -2,10 +2,15 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Screen1 from '../Content/Screen1';
 import Screen2 from '../Content/Screen2';
-import Home from '../Content/Home';
 import HeaderTitleSc1 from '../Header/HeaderTitleSc1';
 import { Image } from 'react-native-elements';
 import TabNavigator from '../Navigator/TabNavigator';
+
+import JobList from '../Content/Job';
+import JobDetail from '../Content/Job/JobDetail';
+import SettingScreen from '../Content/Setting';
+import NewList from '../Content/New';
+import NewDetail from '../Content/New/NewDetail';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +38,24 @@ export default function MainStackNavigator(){
                             },
                           }}
                           />
+
+                <Stack.Screen name="NewList" 
+                              component={NewList}                              
+                              />
+                <Stack.Screen name="NewDetail" 
+                              component={NewDetail}                              
+                              />
+                <Stack.Screen name="JobList" 
+                              component={JobList}                              
+                              />
+                <Stack.Screen name="JobDetail" 
+                              component={JobDetail}                              
+                              />
+                <Stack.Screen name="SettingScreen" 
+                              component={SettingScreen}                              
+                              />
+
+                
             <Stack.Screen name="Home" 
                       component={ TabNavigator }
                       options={{
