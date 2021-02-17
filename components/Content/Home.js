@@ -4,6 +4,27 @@ import { Ionicons } from '@expo/vector-icons';
 import { Icon } from 'react-native-elements';
 
 export default function Tabbar({ navigation }) {
+    React.useLayoutEffect(()=>{
+        navigation.setOptions({
+            title: 'Home',
+            headerStyle: {
+                backgroundColor: '#091046',
+            },
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+                fontWeight: 'normal',
+                fontSize: 17
+            },    
+            headerLeft: () => (
+                <Image source={ require('../../assets/icon/search.png')} 
+                style={{ margin: 10, width:20, height:20 }}
+                />
+            ),
+            headerTitle: "Home" 
+        })
+    },[navigation])
+
     return(     
         <View style={styles.container}>
             <View style={styles.formInput}>

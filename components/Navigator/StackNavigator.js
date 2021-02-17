@@ -36,42 +36,12 @@ export default function MainStackNavigator(){
                           />
             <Stack.Screen name="Home" 
                       component={ TabNavigator }
-                      options={({ navigation, route }) => ({
-                        headerStyle: {
-                          backgroundColor: '#091046',
-                        },
-                        headerTintColor: '#fff',
-                        headerTitleAlign: 'center',
-                        headerTitle: getHeaderTitle(route),
-                        headerLeft: () => (
-                            getHeaderIcon(route)
-                        ),
-                      })}
+                      options={{
+                        headerShown:false,
+                        headerLeft: null
+                      }}
                       />
 
         </Stack.Navigator>
     )
-}
-
-function getHeaderIcon(route) {
-    const routeName = getFocusedRouteNameFromRoute(route);
-    if (routeName == 'Home') {
-      return <Image style={{ width:20, height:20, margin: 10}} source={ require('../../assets/icon/search.png')}/>;
-    }
-}
-
-function getHeaderTitle(route) {
-  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Home';
-  switch (routeName) {
-    case 'Home':
-      return "Home";
-    case 'News':
-      return 'News';
-    case 'Messages':
-      return 'Messages';
-    case 'Job List':
-      return 'Job List';
-    case 'Settings':
-      return 'Settings';
-  }
 }

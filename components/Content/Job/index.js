@@ -65,9 +65,9 @@ const list = [
 ]
 
 export default function JobList({navigation}){
-    React.useLayoutEffect(()=>{
+    React.useLayoutEffect(()=>{        
         navigation.setOptions({
-            // title: 'Job List ',
+            title: 'Job List ',
             headerStyle: {
                 backgroundColor: '#091046',
             },
@@ -76,7 +76,8 @@ export default function JobList({navigation}){
             headerTitleStyle: {
                 fontWeight: 'normal',
                 fontSize: 17
-            },    
+            },
+            headerTitle: "JobList" 
         })
     },[navigation])
 

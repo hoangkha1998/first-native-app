@@ -20,7 +20,7 @@ const list = [
 export default function NewList({navigation}){
     React.useLayoutEffect(()=>{
         navigation.setOptions({
-            // title: 'new list ',
+            title: 'new list ',
             headerStyle: {
                 backgroundColor: '#091046',
             },
@@ -29,7 +29,8 @@ export default function NewList({navigation}){
             headerTitleStyle: {
                 fontWeight: 'normal',
                 fontSize: 17
-            },    
+            }, 
+            headerTitle: "News"   
         })
     },[navigation])
     return (
