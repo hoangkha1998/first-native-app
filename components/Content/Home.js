@@ -1,40 +1,9 @@
-import React, { version } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Icon } from 'react-native-elements';
 
-export default function Tabbar() {
-    const dataTitleImage = [
-        {
-            title: 'String6', 
-            image: 'briefcase'
-        },
-        {
-            title: 'String7', 
-            image: 'train'
-        },
-        {
-            title: 'String8', 
-            image: 'map'
-        },
-        {
-            title: 'String9', 
-            image: 'infinite-outline'
-        },
-        {
-            title: 'String10', 
-            image: 'time'
-        },
-        {
-            title: 'String11', 
-            image: 'calendar'
-        },
-        {
-            title: 'String12', 
-            image: 'card'
-        },
-    ];
-    
+export default function Tabbar({ navigation }) {
     return(     
         <View style={styles.container}>
             <View style={styles.formInput}>
@@ -94,20 +63,88 @@ export default function Tabbar() {
                     </View>
                 </View>
 
-                <View style={styles.infor2}>
-                {dataTitleImage.map((data, i) => (
-                    <View key={i} style={styles.projectRow}>
+                <View style={ styles.borderBottom }>
+                    <View style={ styles.borderLine }/>
+                </View>
+
+                <View style={styles.infor1}>
+                    <View style={styles.btnInfor2}>
                         <View style={styles.icon}>
-                            <Ionicons name={data.image} size={17} color="white" />
+                            <Ionicons name="briefcase" size={17} color="white" />
                         </View>
                         <View style={styles.titleInfo}>
-                            <Text style={styles.titleItemList}>{data.title}</Text>
-                        </View>
-                        <View styles={{ marginLeft: 20 }}>
-                            <Text style={{ color:"white"}}>2021/02/09</Text>
+                            <Text style={styles.titleItemList}>String6</Text>
                         </View>
                     </View>
-                ))}
+                </View>
+
+                <View style={styles.infor1}>
+                    <View style={styles.btnInfor2}>
+                        <View style={styles.icon}>
+                            <Ionicons name="train" size={17} color="white" />
+                        </View>
+                        <View style={styles.titleInfo}>
+                            <Text style={styles.titleItemList}>String7</Text>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.infor1}>
+                    <View style={styles.btnInfor2}>
+                        <View style={styles.icon}>
+                            <Ionicons name="map" size={17} color="white" />
+                        </View>
+                        <View style={styles.titleInfo}>
+                            <Text style={styles.titleItemList}>String8</Text>
+                        </View>
+                    </View>
+                    <View style={styles.moreContainer}>
+                        <Icon name="chevron-right" size={15} color="white" style={styles.moreIcon} />
+                    </View>
+                </View>
+
+                <View style={styles.infor1}>
+                    <View style={styles.btnInfor2}>
+                        <View style={styles.icon}>
+                            <Ionicons name="infinite-outline" size={17} color="white" />
+                        </View>
+                        <View style={styles.titleInfo}>
+                            <Text style={styles.titleItemList}>String9</Text>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.infor1}>
+                    <View style={styles.btnInfor2}>
+                        <View style={styles.icon}>
+                            <Ionicons name="time" size={17} color="white" />
+                        </View>
+                        <View style={styles.titleInfo}>
+                            <Text style={styles.titleItemList}>String10</Text>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.infor1}>
+                    <View style={styles.btnInfor2}>
+                        <View style={styles.icon}>
+                            <Ionicons name="calendar" size={17} color="white" />
+                        </View>
+                        <View style={styles.titleInfo}>
+                            <Text style={styles.titleItemList}>String11</Text>
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.infor1}>
+                    <View style={styles.btnInfor2}>
+                        <View style={styles.icon}>
+                            <Ionicons name="card" size={17} color="white" />
+                        </View>
+                        <View style={styles.titleInfo}>
+                            <Text style={styles.titleItemList}>String12</Text>
+                        </View>
+                    </View>
                 </View>
             </View>
         </View>
@@ -175,8 +212,10 @@ const styles = StyleSheet.create({
     },
 
     btnInfor2: {
-        padding: 10,
         flexDirection: 'row',
+        paddingLeft: 10,
+        paddingBottom: 0,
+        paddingTop: 10
     },
 
     btnClickMe: {
@@ -226,7 +265,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingTop: 10,
         paddingLeft: 10,
-        justifyContent: "space-between"
     },
 
     titleInfo: {
@@ -234,9 +272,16 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        width: "6%",
-        alignItems: "center",
         justifyContent: "center"
+    },
+
+    moreContainer: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    
+    moreIcon: {
+        paddingRight: 20
     },
 
     textSubmit: {
@@ -245,5 +290,16 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
         paddingTop : 5,
+    },
+
+    borderBottom: {
+        justifyContent: "center", 
+        alignItems: "center"
+    },
+    borderLine: {
+        width: '90%',
+        borderBottomColor: 'white',
+        borderBottomWidth: 0.2, 
+        padding: 5
     }
 })

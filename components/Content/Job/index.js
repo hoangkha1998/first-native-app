@@ -67,7 +67,7 @@ const list = [
 export default function JobList({navigation}){
     React.useLayoutEffect(()=>{
         navigation.setOptions({
-            title: 'Job List ',
+            // title: 'Job List ',
             headerStyle: {
                 backgroundColor: '#091046',
             },
@@ -89,7 +89,10 @@ export default function JobList({navigation}){
             <ScrollView>
             {
                 list.map((l, i) => (                           
-                    <ListItem key={i} bottomDivider containerStyle={styles.listItem} onPress={()=>navigation.navigate('JobDetail', {titleJob:l.name,contentJob:l.subtitle})}>
+                    <ListItem key={i} bottomDivider containerStyle={styles.listItem}
+                            onPress={()=>navigation.navigate('JobDetail', 
+                                {titleJob:l.name,contentJob:l.subtitle})}
+                            >
                         <ListItem.Content style={{height:30}}>
                         <View style={{flexDirection:'row',marginTop:-40}}>
                                 <Text style={styles.title}>{l.name}</Text>

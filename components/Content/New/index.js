@@ -20,7 +20,7 @@ const list = [
 export default function NewList({navigation}){
     React.useLayoutEffect(()=>{
         navigation.setOptions({
-            title: 'new list ',
+            // title: 'new list ',
             headerStyle: {
                 backgroundColor: '#091046',
             },
@@ -41,7 +41,9 @@ export default function NewList({navigation}){
             <ScrollView>
             {
                 list.map((l, i) => (
-                <ListItem key={i} bottomDivider containerStyle={{backgroundColor:'#2D5294'}} onPress={()=>navigation.navigate('NewDetail', {titleNew:l.name,contentNew:l.subtitle})}>
+                <ListItem key={i} bottomDivider containerStyle={{backgroundColor:'#2D5294'}} 
+                onPress={()=>navigation.navigate('NewDetail', {titleNew:l.name,contentNew:l.subtitle})}>
+
                     <ListItem.Content style={{height:30}}>
                     <View style={{flexDirection:'row',marginTop:-40}}>
                             <Text style={styles.title}>{l.name}</Text>

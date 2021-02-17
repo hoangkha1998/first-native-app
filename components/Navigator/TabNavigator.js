@@ -3,6 +3,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements';
 import Home from '../Content/Home';
 
+
+import JobList from '../Content/Job';
+import JobDetail from '../Content/Job/JobDetail';
+import SettingScreen from '../Content/Setting';
+import NewList from '../Content/New';
+import NewDetail from '../Content/New/NewDetail';
+
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator(){
@@ -23,12 +30,12 @@ export default function BottomTabNavigator(){
         />
         <Tab.Screen 
                 name="News" 
-                component={ Home } 
+                component={ NewList } 
                 options={{
                 tabBarIcon: ({ color, size }) => (
                     <Icon name="add" color={color} size={size} />
                 ),
-                }}
+            }}
         />
         <Tab.Screen 
                 name="Messages" 
@@ -41,7 +48,7 @@ export default function BottomTabNavigator(){
             />
         <Tab.Screen 
                 name="Job List" 
-                component={Home} 
+                component={JobList} 
                 options={{
                     tabBarIcon: ({ color, size }) => (
                     <Icon name="list" color={color} size={size} />
@@ -50,7 +57,7 @@ export default function BottomTabNavigator(){
             />
         <Tab.Screen 
                 name="Settings" 
-                component={Home} 
+                component={SettingScreen} 
                 options={{
                     tabBarIcon: ({ color, size }) => (
                     <Icon name="settings" color={color} size={size} />
