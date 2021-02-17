@@ -29,7 +29,8 @@ export default function NewList({navigation}){
             headerTitleStyle: {
                 fontWeight: 'normal',
                 fontSize: 17
-            },    
+            }, 
+            headerTitle: "News"   
         })
     },[navigation])
     return (
@@ -41,7 +42,9 @@ export default function NewList({navigation}){
             <ScrollView>
             {
                 list.map((l, i) => (
-                <ListItem key={i} bottomDivider containerStyle={{backgroundColor:'#2D5294'}} onPress={()=>navigation.navigate('NewDetail', {titleNew:l.name,contentNew:l.subtitle})}>
+                <ListItem key={i} bottomDivider containerStyle={{backgroundColor:'#2D5294'}} 
+                onPress={()=>navigation.navigate('NewDetail', {titleNew:l.name,contentNew:l.subtitle})}>
+
                     <ListItem.Content style={{height:30}}>
                     <View style={{flexDirection:'row',marginTop:-40}}>
                             <Text style={styles.title}>{l.name}</Text>

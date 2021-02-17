@@ -57,7 +57,7 @@ const list2 = [
 export default function SettingScreen({navigation}){
     React.useLayoutEffect(()=>{
         navigation.setOptions({
-            title:'Setting Screen',
+            // title:'Setting Screen',
             headerStyle:{
                 backgroundColor: '#091046'
             },

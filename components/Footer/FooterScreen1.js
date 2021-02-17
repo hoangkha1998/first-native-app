@@ -15,7 +15,7 @@ export default function FooterScreen1({navigation}){
                             
                         </Col>
                         <Col>
-                            <Button block bordered style={styles.btn2} onPress={() => navigation.navigate('SettingScreen')}>                         
+                            <Button block bordered style={styles.btn2} onPress={() => navigation.navigate('Home')}>                         
                                 <Text style={styles.buttonText2}>琉球方言</Text> 
                             </Button>
                         </Col>
